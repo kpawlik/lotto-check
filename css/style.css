@@ -1,0 +1,70 @@
+
+.body{
+	margin: 0px;
+	padding: 0px;
+	width: 700px;
+	height: 600px;
+	margin: 0 auto;
+	background: #EEEEEE;
+	font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+}
+.menu{
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 20px;
+}
+.menu-item{
+	cursor: pointer;
+}
+.menu-item:hover{
+	background: #BBBBBB;	
+}
+.user_info{
+	float: right;
+	color: #FFFFFF;
+	text-align: right;
+}
+.header{
+	background: #221B15;
+	color: #D1D67B;
+	padding: 10px;
+	font-weight: bold;
+	font-size: larger;
+}
+.results-panel{
+	background:#DDD;
+	width: 60%;  	
+	margin: 0 auto;
+	text-align: center;
+}
+.results{
+	/*width: 40%;0
+  	margin: 0 auto;
+	*/
+	margin-top: 10px;
+} 
+.result_label {
+	text-align: left;
+	float: left;
+	width: 30%;
+}
+.result_win{
+	border: 1px solid #000;
+	text-align: left;
+}
+.result{
+	text-align: left;
+	width: 70%;
+	display: block;
+}
+#mi-edit, #mi-stats, #mi-main{
+	width:40%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+button{
+	width: 150px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}

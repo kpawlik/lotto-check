@@ -1,0 +1,79 @@
+{{define "index"}}
+<html>
+    <head>
+        <title>Lotto</title>
+        <!-- data-main attribute tells require.js to load
+             scripts/main.js after require.js loads. -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="js/lib/jquery-ui-1.11.1/jquery-ui.css" />
+		<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js" ></script>
+		<script data-main="scripts/main" src="js/lib/require.js"></script>
+        <script type="text/javascript" src="js/require.config.js" ></script>
+        
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("body").hide();
+	        require(["jquery", "main"], function ($, lotto) {
+	            "use strict";
+	            var app = new lotto.App("{{.LogoutURL}}");
+	            app.init();
+				$("body").show();
+	        });
+		});
+        </script>
+    </head>
+    <body>
+        <div class="body">
+			<div class="user_info">
+			<div><span id="user_info"></span>{{.User}}</div>
+				<button id="mi-logout">Wyloguj</button>
+    	    </div>
+            <h1 class="ui-dialog-titlebar ui-widget-header ui-corner-all">Lucky numbers</h1>
+            <div class="menu">
+                <button class="menu-item" id="mi-edit">
+                    Zmień/Dodaj
+                </button>
+                <button class="menu-item" id="mi-stats">
+                    Historia
+                </button>
+            </div>
+            <div id='user-numbers'>
+				<div class="results-panel">
+				<div class="results header"> Lucky  </div>
+				<div class="results">
+					<div class="result_label">Start:</div> <div class="result" id="panel_start_date">{{.Start}}</div>
+				</div>
+				<div class="results">
+					<div class="result_label">End:</div> <div class="result" id="panel_end_date">{{.End}}</div>
+				</div>
+				<div class="results">
+					<div class="result_label">Numbers:</div> <div class="result" id="panel_lucky">{{.Lucky}}</div>
+				</div>
+				<div class="results">
+					<div class="result_label">Plus:</div> <div class="result" id="panel_plus">{{.IsPlus}}</div>
+				</div>
+				</div>
+				<div class="results-panel">
+				<div class="results header">Results ({{.ResultDate}}) </div>
+				
+				<div class="results">
+					<div class="result_label">Lotto:</div> <div class="result">{{.Lotto}}</div>
+				</div>
+				<div class="results">
+					<div class="result_label">Plus:</div> <div class="result">{{.Plus}}</div>
+				</div>
+				</div>
+				<div class="results-panel">
+				<div class="results header">Wins</div>
+				<div class="results result_win">
+					<div class="result_label">Lotto:</div> <div class="result">{{.LottoWin}}</div>
+				</div>
+				<div class="results result_win">
+					<div class="result_label">Plus:</div> <div class="result">{{.PlusWin}}</div>
+				</div>
+				</div>
+            </div>
+        </div>
+    </body>
+</html>
+{{end}}
